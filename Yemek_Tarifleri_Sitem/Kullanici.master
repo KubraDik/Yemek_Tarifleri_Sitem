@@ -1,0 +1,111 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Kullanici.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <link href="Kullanici.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1 {
+            width: 700px;
+            height: 150px;
+            margin-left: 300px;
+            background-color: #FF9999;
+        }
+        .auto-style2 {
+            width: 700px;
+            height: 20px;
+            margin-left: 300px;
+
+        }
+        .auto-style3 {
+            width: 700px;
+            height: 46px;
+            margin-left: 300px;
+            background-color: #FFF;
+        }
+        .auto-style4 {
+            width: 700px;
+            height: 20px;
+            margin-left: 300px;
+
+        }
+        .auto-style7 {
+            width: 100%;
+            height: 44px;
+        }
+        .auto-style8 {
+            text-align: center;
+            background-color: #FF9999;
+            height: 45px;
+        }
+        .auto-style9 {
+            height: auto;
+            width: 700px;
+            margin-left: 300px;
+        }
+        .auto-style10 {
+            width: 200px;
+            height: auto;
+            margin-left: 0px;
+            float: left;
+             background-color: #FF9999;
+        }
+        .auto-style11 {
+            width: 450px;
+            height: auto;
+            margin-left: 50px;
+            float: left;
+             background-color: #FF9999;
+          
+        }
+        .auto-style12 {
+            font-size: large;
+        }
+    </style>
+</head>
+<body style="width: 1277px; height: 716px">
+    <form id="form1" runat="server">
+    <div class="auto-style1">
+        
+    </div>
+        <div class="auto-style2"></div>
+        <div class="auto-style3">
+            <table class="auto-style7">
+                <tr>
+                    <td class="auto-style8"><strong><a href="AnaSayfa.aspx">ANASAYFA</a> </strong></td>
+                    <td class="auto-style8"><strong><a href="GununYemegi.aspx">GÜNÜN YEMEĞİ</a> </strong></td>
+                    <td class="auto-style8"><strong><a href="TarifOner.aspx">TARİF ÖNER </a> </strong></td>
+                    <td class="auto-style8"><strong><a href="Hakkimizda.aspx">HAKKIMIZDA</a> </strong></td>
+                    <td class="auto-style8"><strong><a href="iletisim.aspx">İLETİŞİM</a> </strong></td>
+                </tr>
+            </table>
+        </div>
+        <div class="auto-style4">&nbsp</div>
+        
+        <div class="auto-style9"> 
+                    <div class="auto-style10">
+                        <strong><span class="auto-style12">KATEGORİLER </span></strong><asp:DataList ID="DataList1" runat="server" OnSelectedIndexChanged="DataList1_SelectedIndexChanged" Width="200px">
+                            <ItemTemplate>
+                                <div style="border: thin solid #FFFFCC">
+                                   <a href="KategoriDetay.aspx?Kategoriid=<%#Eval("Kategoriid") %>" ><asp:Label ID="Label1" runat="server" Text='<%# Eval("KategoriAd") %>'></asp:Label></a>
+                                    (
+                                    <asp:Label ID="Label2" runat="server" Text='<%# Eval("KategoriAdet") %>'></asp:Label>
+                                    )</div>
+                            </ItemTemplate>
+                        </asp:DataList>
+                    </div>
+        <div class="auto-style11">
+              <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+                    
+        </asp:ContentPlaceHolder>
+        </div>
+
+        </div>
+
+    </form>
+</body>
+</html>
